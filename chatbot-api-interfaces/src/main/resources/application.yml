@@ -1,2 +1,7 @@
 server:
   port: 8090
+
+chatbot-api:
+  groupId: 88888285112252
+  cookie: zsxq_access_token=4EE5EA9A-BA93-5F92-8B35-2DEBD97F6230_E71A79F0C6D6236C; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22212251412151881%22%2C%22first_id%22%3A%22190240aedc310be-0bbd8f349acb41-4c657b58-1327104-190240aedc41c3b%22%2C%22props%22%3A%7B%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTkwMjQwYWVkYzMxMGJlLTBiYmQ4ZjM0OWFjYjQxLTRjNjU3YjU4LTEzMjcxMDQtMTkwMjQwYWVkYzQxYzNiIiwiJGlkZW50aXR5X2xvZ2luX2lkIjoiMjEyMjUxNDEyMTUxODgxIn0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%22212251412151881%22%7D%7D; zsxqsessionid=438263ee265296d9e158ce50a0d4560c; abtest_env=beta
+  openAiKey: sk-vnFRCSaq8GlCZIAm885eBc73F38c4023A363274794Fc7275
