@@ -26,11 +26,12 @@ public class SpringBootRunTest {
 
     private Logger logger = LoggerFactory.getLogger(SpringBootRunTest.class);
 
-    @Value("${chatbot-api.groupId}")
+    @Value("${chatbot-api.group01.groupId}")
     private String groupId;
-    @Value("${chatbot-api.cookie}")
+    @Value("${chatbot-api.group01.cookie}")
     private String cookie;
-
+    @Value("sk-vnFRCSaq8GlCZIAm885eBc73F38c4023A363274794Fc7275")
+    private String openAiKey;
     @Resource
     private IZsxqApi zsxqApi;
 
@@ -55,7 +56,7 @@ public class SpringBootRunTest {
     }
     @Test
     public void test_openai() throws IOException {
-        String response = openAI.doChatGPT("1+1=？");
+        String response = openAI.doChatGPT(openAiKey,"1+1=？");
         logger.info("测试结果：{}",response);
     }
 }
