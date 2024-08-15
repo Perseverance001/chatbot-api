@@ -30,8 +30,6 @@ public class SpringBootRunTest {
     private String groupId;
     @Value("${chatbot-api.group01.cookie}")
     private String cookie;
-    @Value("sk-vnFRCSaq8GlCZIAm885eBc73F38c4023A363274794Fc7275")
-    private String openAiKey;
     @Resource
     private IZsxqApi zsxqApi;
 
@@ -45,18 +43,19 @@ public class SpringBootRunTest {
         logger.info("测试结果：{}", JSON.toJSONString(unAnsweredQuestionsAggregates));
 
         List<Topics> topics = unAnsweredQuestionsAggregates.getResp_data().getTopics();
-        for (Topics topic : topics){
-            String topic_id = topic.getTopic_id();
-            String text = topic.getQuestion().getText();
+        if (topics != null && !topics.isEmpty()) {
+            for (Topics topic : topics){
+                String topic_id = topic.getTopic_id();
+                String text = topic.getQuestion().getText();
 
-            logger.info("topicId:{},text:{}",topic_id,text);
-            //
-            zsxqApi.answer(groupId,cookie,topic_id,text,false);
+                logger.info("topicId:{},text:{}",topic_id,text);
+                zsxqApi.answer(groupId,cookie,topic_id,text,false);
+            }
         }
     }
     @Test
     public void test_openai() throws IOException {
-        String response = openAI.doChatGPT(openAiKey,"1+1=？");
+        String response = openAI.doChatGPT("1+1=？");
         logger.info("测试结果：{}",response);
     }
 }

@@ -1,1 +1,0 @@
-package cn.hq.chatbot.domain;
